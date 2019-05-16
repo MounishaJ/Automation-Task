@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class checkboxes {
 	
 	/* 5-8-2019
-	 * Check box handling	  
+	 * Check box handling	 mmmm 
 	 */
 	//mou
 	public static void main(String []args) throws Exception
