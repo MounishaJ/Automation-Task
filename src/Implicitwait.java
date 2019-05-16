@@ -3,7 +3,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Implicitwait {
 	/*
-	 * 14-5-2019
+	 * 14-5-2018
 	 */
 	public static void main(String []arg)
 	{
