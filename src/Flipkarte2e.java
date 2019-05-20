@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -14,6 +15,7 @@ public class Flipkarte2e {
 		driver.findElement(By.xpath("//button[@class='_2AkmmA _29YdH8']")).click();
 		
 		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("Mobiles");
+		driver.findElement(By.xpath("//input[@name='q']")).sendKeys(Keys.ENTER);
 
 	}
 
