@@ -21,6 +21,7 @@ public class Checkboxes {
 			System.out.println(count); //print howmany check boxes are there
 			
 			System.out.println(driver.findElement(By.cssSelector("input[type='checkbox']")).isSelected());
+			
 			for(int i=0;i<count;i++) {
 	        driver.findElements(By.xpath("//input[@type='checkbox']")).get(i).click();
 	        Thread.sleep(2000);

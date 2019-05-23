@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +34,17 @@ public class LinkCount {
 			String clickonlinktab=Keys.chord(Keys.CONTROL,Keys.ENTER);
 			columndriver.findElements(By.tagName("a")).get(i).sendKeys(clickonlinktab);
 			Thread.sleep(2000);
+		}//it opens all the tabs
+		
+		//move one by one window and print title of the window
+		
+		Set<String> abc=driver.getWindowHandles();//4 windows
+		Iterator<String> it=abc.iterator();
+		while (it.hasNext()) {
+			driver.switchTo().window(it.next());
+			System.out.println(driver.getTitle());
 		}
+		
 		
 	}
 
