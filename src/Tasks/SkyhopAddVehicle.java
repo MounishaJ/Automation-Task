@@ -13,7 +13,7 @@ public class SkyhopAddVehicle {
 
 	static WebDriver driver;
 	public static void main(String[] args) throws InterruptedException {
-		// 23/5/2019
+		// 23/5/2019 24/5/2019
 		
 		System.setProperty("webdriver.chrome.driver", "F://Web Drivers/chromedriver.exe");
 	    driver=new ChromeDriver();
