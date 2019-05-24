@@ -1,6 +1,5 @@
 package Tasks;
 
-import javax.swing.Scrollable;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -50,21 +49,15 @@ public class SkyhopAddVehicle {
 		state.selectByVisibleText("Pennsylvania");
 		
 //scroll the page
-		scroll("v_l_expiry");
-		
+		scroll(driver.findElement(By.id("v_l_expiry")));
+
 //selectAirport
-		String[] str= {"dal","bna"};
-	    for (int i = 0; i < str.length; i++) 
-	    {
-//	    	System.out.println("array " + str[i]);
-	    	selectAirport(str[i]);
-		} 
-				
-		
-		 
-		
-		
-		/*
+		String[] str = { "bna","tpa"  };
+		for (int i = 0; i < str.length; i++) 
+		{
+		selectAirport(str[i]);
+		}
+
 		driver.findElement(By.id("v_l_plate")).sendKeys("AP21w28");
 //expiry date		
 		
@@ -78,7 +71,7 @@ public class SkyhopAddVehicle {
 		driver.findElement(By.id("v_ep_expiry")).click();
 		date("May","31");
 		
-		scroll("v_tracker");
+		scroll(driver.findElement(By.id("v_tracker")));
 				
 		Select apermit=new Select(driver.findElement(By.id("v_a_permit")));
 		apermit.selectByIndex(1);
@@ -93,54 +86,46 @@ public class SkyhopAddVehicle {
 //vehicle tracker
 		Select track=new Select(driver.findElement(By.id("v_tracker")));
 		track.selectByValue("GPS");
-	*/	
+		
 	}
 	
-	public static void selectAirport(String str)
+	public static void selectAirport(String str) throws InterruptedException 
 	{
-	driver.findElement(By.xpath("//div[@class='btn-group']")).click();
-	int size=driver.findElements(By.xpath("//label[@class='checkbox']")).size();
-	System.out.println(size);
-	driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(str);
-	System.out.println(str);
-//size
+				driver.findElement(By.xpath("//button[@class='multiselect dropdown-toggle btn btn-default']")).click();
+				int size = driver.findElements(By.xpath("//label[@class='checkbox']")).size();
+				
+				for (int i = 0; i < size; i++) 
+				{
+				String text = driver.findElements(By.xpath("//label[@class='checkbox']")).get(i).getText();
+					if (text.equalsIgnoreCase(str)) 
+					{
+					driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(str);
+					Thread.sleep(2000);
+					driver.findElements(By.xpath("//label[@class='checkbox']")).get(i).click();
+					driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(Keys.CONTROL + "a", Keys.DELETE);
+					driver.findElement(By.xpath("//button[@class='multiselect dropdown-toggle btn btn-default']")).click();
+					break;
+					}
+				}
+	}	
 	
-	for(int i=0;i<size;i++)
+	public static void scroll(WebElement element) 
 	{
-		String text=driver.findElements(By.xpath("//label[@class='checkbox']")).get(i).getText();
-		System.out.println(text);
-		if(text.contains(str))
-		{
-			driver.findElements(By.xpath("//label[@class='checkbox']")).get(i).click();
-			driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(Keys.CONTROL +"a",Keys.DELETE);
-			driver.findElement(By.xpath("//div[@class='btn-group']")).click();
-		}
+				JavascriptExecutor je = (JavascriptExecutor) driver;
+				// now execute query which actually will scroll until that element is not appeared on page.
+				je.executeScript("arguments[0].scrollIntoView(true);",element);
+		
 	}
-}
-	
-	
-	public static void scroll(String id) {
-		JavascriptExecutor je = (JavascriptExecutor) driver;
-		WebElement element;
-		 element = driver.findElement(By.id(id));
-		 // now execute query which actually will scroll until that element is not appeared on page.
-		 
-		je.executeScript("arguments[0].scrollIntoView(true);",element);
-	}
-	
 		
 	public static void date(String month,String day) 
 	{
 
-		//select month		
+//select month		
 				while(!driver.findElement(By.xpath("//span[@class='ui-datepicker-month']")).getText().contains(month))
 				{
 					driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']")).click();
 				}
-				
-		//select date		
-				
-				//td[@data-handler='selectDay']
+//select date		
 				
 				int daycount=driver.findElements(By.xpath("//td[@data-handler='selectDay']")).size();
 				System.out.println(daycount);
@@ -159,15 +144,5 @@ public class SkyhopAddVehicle {
 				
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
