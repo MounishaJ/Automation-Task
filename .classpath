@@ -10,5 +10,10 @@
 	<classpathentry kind="lib" path="F:/selenium-jars/libs/okhttp-3.11.0.jar"/>
 	<classpathentry kind="lib" path="F:/selenium-jars/libs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="F:/selenium-jars/libs/testng-6.9.10.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-test-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
