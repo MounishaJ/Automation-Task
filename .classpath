@@ -15,5 +15,8 @@
 	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-sources.jar"/>
 	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-tests.jar"/>
 	<classpathentry kind="lib" path="F:/selenium-jars/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6-test-sources.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/apache-log4j-2.11.2-bin/log4j-1.2-api-2.11.2.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/apache-log4j-2.11.2-bin/log4j-appserver-2.11.2.jar"/>
+	<classpathentry kind="lib" path="F:/selenium-jars/apache-log4j-2.11.2-bin/log4j-core-2.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

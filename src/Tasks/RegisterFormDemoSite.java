@@ -84,15 +84,10 @@ public class RegisterFormDemoSite {
 		System.out.println(text + "index" + i);
 		
 		
-		if(text.equalsIgnoreCase("India"))
+		if(text.contains("Australia"))
 		{
-				// run it
-				 //driver.findElement(By.xpath("//input[@type='search']")).sendKeys(Keys.ENTER);	 
-			
-			driver.findElements(By.xpath("//li[@class='select2-results__option']")).get(i).click();
-			//System.out.println(m);
-			 //driver.findElement(By.xpath("//div[@class='row ']")).click();
-			break;
+				driver.findElements(By.xpath("//li[@class='select2-results__option']")).get(i).click();
+				break;
 		}
 	}
 
@@ -106,10 +101,10 @@ public class RegisterFormDemoSite {
 	day.selectByValue("21");
 	
 //select password
-	driver.findElement(By.id("firstpassword")).sendKeys("mounisha2128");
-	driver.findElement(By.id("secondpassword")).sendKeys("mounisha2128");
+	driver.findElement(By.id("firstpassword")).sendKeys("Mounisha2128@");
+	driver.findElement(By.id("secondpassword")).sendKeys("Mounisha2128@");
 	
-	
+	driver.findElement(By.xpath("//button[@id='submitbtn']")).click();
 	}
 	
 	
