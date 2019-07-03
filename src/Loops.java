@@ -1,4 +1,4 @@
-package basicjava;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -36,4 +36,4 @@ public class Loops {
 		
 	}
 }
-// link https://stackoverflow.com/questions/12363038/selenium-webdriver-click-on-hidden-elements
+// 
