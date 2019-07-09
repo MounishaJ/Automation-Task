@@ -1,4 +1,4 @@
-package basicjava;
+package arrays;
 
 public class ArrayStrings {
 
